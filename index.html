@@ -20,7 +20,9 @@
       <nav class="navbar navbar-expand-sm navbar-dark bg-info">
         <a class="navbar-brand" href="https://zxy-ryan.github.io/FlightSearcher/">WebGIS Demo: Flight Searcher</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-          aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+          aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
@@ -33,6 +35,14 @@
             </li>
           </ul>
         </div>
+        <p class="col-sm-5 d-none d-xl-block" id="notice">Notice: This page was written in ES6(ECMAScript 2015), if
+          something is going
+          wrong
+          please try another
+          browser.
+          <br>
+          此页面应用ES6语法，如有问题请尝试使用更高版本的浏览器。
+        </p>
       </nav>
     </div>
   </header>
@@ -72,9 +82,11 @@
 
   <footer>
     <div class="container">
-      <p>Create by
-        <a href="https://www.linkedin.com/feed/">Xinyu Zhang</a>
-      </p>
+      <div class="row">
+        <p class="col-sm-3">Create by
+          <a href="https://www.linkedin.com/feed/">Xinyu Zhang</a>
+        </p>
+      </div>
     </div>
   </footer>
 

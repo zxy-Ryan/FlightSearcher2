@@ -65,9 +65,9 @@ html, body, #mapViewDiv {
   margin-right: -50%;
 }
 
-/* #main {
-  height: 800px;
-} */
+#notice {
+  color: white;
+}
 
 footer {
   background-color: #778899;
