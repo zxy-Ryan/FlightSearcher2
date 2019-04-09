@@ -1,7 +1,6 @@
 $(document).ready(function () {
   var airportUrl = "database/Airports.json";
   var flightURL = "database/Flights.json";
-  // var cityURL = "database/Cities.json";
 
   require([
     'Canvas-Flowmap-Layer/CanvasFlowmapLayer',
@@ -17,21 +16,6 @@ $(document).ready(function () {
     MapView,
     TileLayer
   ) {
-
-      // var map = new Map({
-      //     basemap: "dark-gray-vector"
-      // });
-      // // 在页面中呈现地图
-      // var view = new MapView({
-      //     container: "viewDiv",  // html dom元素id，用来作为地图视图容器
-      //     map: map,               // 地图对象
-      //     zoom: 4,  // Sets zoom level based on level of detail (LOD)
-      //     center: [-95.049, 38.485]  // Sets center point of view using longitude,latitude
-      // });
-
-      // var layer1 = new TileLayer({
-      //   url: "https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer"
-      // });
 
       var view = new MapView({
         container: 'mapViewDiv',

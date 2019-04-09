@@ -363,7 +363,7 @@ define([
         },
         flowline: {
           strokeStyle: 'rgba(0, 102, 255, 0.8)',
-          lineWidth: 0.75,
+          lineWidth: 1.25,
           lineCap: 'round',
           shadowColor: 'rgb(0, 102, 255)',
           shadowBlur: 1.5
