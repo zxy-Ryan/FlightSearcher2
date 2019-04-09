@@ -1,7 +1,7 @@
 $(document).ready(function () {
-  var airportUrl = "https://raw.githubusercontent.com/zxy-Ryan/FlightSearcher/master/json/Airports.json";
-  var flightURL = "https://raw.githubusercontent.com/zxy-Ryan/FlightSearcher/master/json/Flights.json";
-  var cityURL = "https://raw.githubusercontent.com/zxy-Ryan/FlightSearcher/master/json/Cities.json";
+  var airportUrl = "database/Airports.json";
+  var flightURL = "database/Flights.json";
+  // var cityURL = "database/Cities.json";
 
   require([
     'Canvas-Flowmap-Layer/CanvasFlowmapLayer',
@@ -55,7 +55,7 @@ $(document).ready(function () {
 
         // here we use Papa Parse to load and read the CSV data
         // we could have also used another library like D3js to do the same
-        Papa.parse('https://raw.githubusercontent.com/zxy-Ryan/FlightSearcher/master/database/test.csv', {
+        Papa.parse('database/flowmap.csv', {
           download: true,
           header: true,
           dynamicTyping: true,

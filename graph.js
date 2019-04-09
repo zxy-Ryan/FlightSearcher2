@@ -1,6 +1,6 @@
-var airportURL = "json/Airports.json";
-var flightURL = "https://raw.githubusercontent.com/zxy-Ryan/FlightSearcher/master/json/Flights.json";
-var cityURL = "https://raw.githubusercontent.com/zxy-Ryan/FlightSearcher/master/json/Cities.json";
+var airportURL = "database/Airports.json";
+var flightURL = "database/Flights.json";
+var cityURL = "database/Cities.json";
 
 // create a map to store the nodes connected to certain start node
 $.ajaxSettings.async = false;
