@@ -95,6 +95,7 @@ $(document).ready(function () {
 
 
           $('#bt2').click(function () {
+            $('#detail').html('searching...<br>正在搜索...');
             if ($('#departure').find(':selected').html() == 'IAH' || $('#destination').find(':selected').html() == 'IAH') {
               alert('There is no flight connected to IAH in the database.');
             } else if ($('#departure').find(':selected').html() == $('#destination').find(':selected').html()) {
@@ -136,6 +137,7 @@ $(document).ready(function () {
           });
 
           $('#bt3').click(function () {
+            $('#detail').html('searching...<br>正在搜索...');
             if ($('#departure').find(':selected').html() == 'IAH' || $('#destination').find(':selected').html() == 'IAH') {
               alert('There is no flight connected to IAH in the database.');
             } else if ($('#departure').find(':selected').html() == $('#destination').find(':selected').html()) {
