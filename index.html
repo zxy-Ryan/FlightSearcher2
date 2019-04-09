@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="description" content="Canvas Flowmap Layer with the Esri ArcGIS API for JavaScript v4.">
+
+  <title>Canvas Flowmap Layer with JSAPI v4</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/view.css">
+  <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+
+
+
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-info">
+        <a class="navbar-brand" href="#">WebGIS Demo: Flight Searcher</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="img/RMDB.png">Data Structure</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Github Repo</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-fluid" id="main">
+      <div class="row justify-content-center">
+        <div class="col-md-4 col-xl-4 text-center d-none d-sm-block">
+          <div class="form-group row justify-content-center" style="margin-top:10%">
+            <label for="inputDeparture" class="col-sm-2 col-form-label">Departure</label>
+            <select class="col-sm-5 offset-sm-1 form-control" id="departure">
+            </select>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label for="inputDestination" class="col-sm-2 col-form-label">Destination</label>
+            <select class="col-sm-5 offset-sm-1 form-control" id="destination">
+            </select>
+          </div>
+          <button type="button" class="btn btn-outline-secondary" id="bt1">Reverse Direction</button>
+          <hr />
+          <button type="button" class="btn btn-outline-secondary" id="bt2">Search Shortest</button>
+          <br />
+          <button type="button" class="btn btn-outline-secondary" id="bt3">Search All</button>
+          <hr />
+          <button type="button" class="btn btn-outline-success" id="bt4">Reset View</button>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="form-group">
+            <div id="mapViewDiv" style="height:450px;width:100%">
+              <img id='loading' src="img/Spinner-1s-200px.svg" />
+            </div>
+            <p class="text-left" id="detail">Loading...<br />正在加载...</p>
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Create by
+        <a href="https://www.linkedin.com/feed/">Xinyu Zhang</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
+
+  <!-- load 3rd-party CSV parsing libary  -->
+  <script src="https://unpkg.com/papaparse@4.6.1/papaparse.min.js" async></script>
+
+  <!-- set Dojo configuration options -->
+  <script>
+    var dojoConfig = {
+      async: true,
+      packages: [{
+        name: 'Canvas-Flowmap-Layer',
+        location: location.pathname.replace(/[^\/]+$/, '') + 'CanvasFlowmapLayer'
+      }]
+    };
+  </script>
+
+  <!-- load Esri JSAPI -->
+  <script src="https://js.arcgis.com/4.10/" defer></script>
+
+  <script src="graph.js" defer></script>
+  <!-- load this app's code -->
+  <script src="script.js" defer></script>
+</body>
+
+</html>

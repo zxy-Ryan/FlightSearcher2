@@ -1,0 +1,88 @@
+html, body, #mapViewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+.navbar {
+  height: 100px;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+}
+
+
+
+.row{
+  overflow: hidden;
+  }
+
+.row [class="col-"]{
+  margin-bottom: -9999px;
+  padding-bottom: 9999px;
+  }
+
+#main {
+    margin-top: 40px;
+  }
+
+#mapViewDiv {
+  border-style: double;
+  border-width: 5px;
+}
+
+#detail {
+  border-style: double;
+  border-width: 5px;
+  height: 150px;
+  overflow: scroll;
+}
+
+#bt2 {
+  margin-top: 10%;
+  margin-bottom: 1%
+}
+
+#bt3 {
+  margin-bottom: 10%;
+}
+
+#bt4 {
+  margin-top: 10%;
+}
+
+#loading {
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  margin-right: -50%;
+}
+
+/* #main {
+  height: 800px;
+} */
+
+footer {
+  background-color: #778899;
+  color: white;
+  padding-bottom: 1rem;
+  height: 80px;
+}
+
+footer p {
+  color:black;
+  padding-top: 20px;
+  font-size: 1.2rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}

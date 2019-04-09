@@ -1,0 +1,42 @@
+[
+    {
+        "Name": "Seattle",
+        "State": "WA"
+    },
+    {
+        "Name": "San Francisco",
+        "State": "CA"
+    },
+    {
+        "Name": "Denver",
+        "State": "CO"
+    },
+    {
+        "Name": "Oakland",
+        "State": "CA"
+    },
+    {
+        "Name": "New York",
+        "State": "NY"
+    },
+    {
+        "Name": "Miami",
+        "State": "FL"
+    },
+    {
+        "Name": "Dallas",
+        "State": "TX"
+    },
+    {
+        "Name": "Salt Lake City",
+        "State": "UT"
+    },
+    {
+        "Name": "Chicago",
+        "State": "IL"
+    },
+    {
+        "Name": "Houston",
+        "State": "TX"
+    }
+]
