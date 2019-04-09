@@ -27,7 +27,7 @@ var nodeAttach = new Map();
 var airportNum = new Map();
 $.getJSON(airportURL, function (airports) {
     $.each(airports, function (index1, value1) {
-        attach = [];
+        var attach = [];
         airportNum.set(value1.Code, index1 + 1);
         $.getJSON(flightURL, function (flights) {
             $.each(flights, function (index2, value2) {
