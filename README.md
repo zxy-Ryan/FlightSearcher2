@@ -1,2 +1,3 @@
-# FlightSearcher1
+# FlightSearcher
 
+A webGIS software demo.
