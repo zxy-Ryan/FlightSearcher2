@@ -32,8 +32,6 @@ $(document).ready(function () {
 
       // build up the flowmap of flights and functions of buttons
       view.when(function () {
-        $("#loading").fadeOut();
-        $("#detail").html('Please choose departure and destination.<br />请选择出发和到达地点，点击左侧按钮开始搜索航线。');
 
         // use Papa Parse to load and read the CSV data
         Papa.parse('database/flowmap.csv', {
@@ -88,6 +86,8 @@ $(document).ready(function () {
           for (i = 2; i < 52; i++) {
             canvasFlowmapLayerView.selectGraphicsForPathDisplayById('s_city_id', i, true, 'SELECTION_ADD');
           };
+          $("#loading").fadeOut();
+          $("#detail").html('Please choose departure and destination.<br />请选择出发和到达地点，点击左侧按钮开始搜索航线。');
 
 
           // search the fastest path
@@ -132,6 +132,7 @@ $(document).ready(function () {
               }
               $('#detail').append('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;共用时' + hours + '小时' + mins + '分钟')
             }
+            $("#loading").fadeOut();
           });
 
           // search all paths
@@ -181,6 +182,7 @@ $(document).ready(function () {
                 $('#detail').append('第' + index + '条路线乘坐航班顺序：' + path + '，共用时' + hours + '小时' + mins + '分钟<br>');
               }
             }
+            $("#loading").fadeOut();
           });
 
           // reset the map
