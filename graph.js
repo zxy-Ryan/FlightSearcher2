@@ -1,4 +1,4 @@
-var airportURL = "https://raw.githubusercontent.com/zxy-Ryan/FlightSearcher/master/json/Airports.json";
+var airportURL = "json/Airports.json";
 var flightURL = "https://raw.githubusercontent.com/zxy-Ryan/FlightSearcher/master/json/Flights.json";
 var cityURL = "https://raw.githubusercontent.com/zxy-Ryan/FlightSearcher/master/json/Cities.json";
 
