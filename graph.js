@@ -22,6 +22,7 @@ $.getJSON(airportURL, function (airports) {
     })
 })
 
+// recursion helper
 function Pathfinder(startcode, endcode, path, paths) {
     path.push(startcode)
     if (startcode == endcode) {
@@ -38,7 +39,7 @@ function Pathfinder(startcode, endcode, path, paths) {
     }
 }
 
-
+// find hall paths between two cities.
 function findpath(startcode, endcode) {
     var path = [];
     var paths = [];
@@ -46,6 +47,7 @@ function findpath(startcode, endcode) {
     return paths;
 }
 
+// create a Map to store all the possible flight arrangements between two cities.
 function flightdict(startcode, endcode) {
     p = findpath(startcode, endcode);
     flightsMap = new Map();
@@ -69,7 +71,7 @@ function flightdict(startcode, endcode) {
     return flightsMap;
 }
 
-// help to list all the combinations in flightdict using cartesian product
+// cartesian product algorithm
 function cartesianProduct(arr) {
     return arr.reduce(function (a, b) {
         return a.map(function (x) {
@@ -80,7 +82,7 @@ function cartesianProduct(arr) {
     }, [[]])
 }
 
-
+// help to list all the combinations in flightdict using cartesian product
 function flights_list(startcode, endcode) {
     var newdict = flightdict(startcode, endcode);
     allflights = [];
@@ -94,6 +96,7 @@ function flights_list(startcode, endcode) {
     return allflights;
 }
 
+// find the path with shortest time, inclusding the overlay time.
 function findShortestFlight(startcode, endcode) {
     var timeList = []
     var pathTimeMap = pathtime(startcode, endcode);
@@ -108,6 +111,7 @@ function findShortestFlight(startcode, endcode) {
     return [shortestPath[0], shortestTime];
 }
 
+// calculate flight time including the overlay time of each flight.
 function pathtime(startcode, endcode) {
     var allflights = flights_list(startcode, endcode);
     var pathTimeMap = new Map();
@@ -140,7 +144,6 @@ function pathtime(startcode, endcode) {
         }
         pathTimeMap.set(oneFlight, pathTime);
     }
-
     for (var i in allflights) {
         var oneFlight = allflights[i];
         var pathOverlayTime = 0;
@@ -156,7 +159,6 @@ function pathtime(startcode, endcode) {
                 overlayTime = nextDepTime - thisArrTime + 86400000;
             }
             pathOverlayTime += overlayTime;
-            // time = oneFlight[j]
         }
         timeWithoutOverlay = pathTimeMap.get(oneFlight);
         totalTimeList.push(timeWithoutOverlay + pathOverlayTime);
@@ -166,6 +168,7 @@ function pathtime(startcode, endcode) {
     }
 }
 
+// obtain the city name by the airports' code.
 function getCity(airportCode) {
     var cityid = "";
     var name = "";

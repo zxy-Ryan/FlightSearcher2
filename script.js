@@ -14,15 +14,13 @@ $(document).ready(function () {
     Graphic,
     EsriMap,
     MapView,
-    TileLayer
-  ) {
+    ) {
 
       var view = new MapView({
         container: 'mapViewDiv',
         map: new EsriMap({
           // use a standard Web Mercator map projection basemap
           basemap: 'streets'
-          // layers: [layer1]
 
         }),
         ui: {
@@ -32,13 +30,12 @@ $(document).ready(function () {
         center: [-95.049, 38.485]
       });
 
-
+      // build up the flowmap of flights and functions of buttons
       view.when(function () {
         $("#loading").fadeOut();
         $("#detail").html('Please choose departure and destination.<br />请选择出发和到达地点，点击左侧按钮开始搜索航线。');
 
-        // here we use Papa Parse to load and read the CSV data
-        // we could have also used another library like D3js to do the same
+        // use Papa Parse to load and read the CSV data
         Papa.parse('database/flowmap.csv', {
           download: true,
           header: true,
@@ -93,8 +90,9 @@ $(document).ready(function () {
           };
 
 
-
+          // search the fastest path
           $('#bt2').click(function () {
+            $("#loading").fadeIn();
             $('#detail').html('searching...<br>正在搜索...');
             if ($('#departure').find(':selected').html() == 'IAH' || $('#destination').find(':selected').html() == 'IAH') {
               alert('There is no flight connected to IAH in the database.');
@@ -136,7 +134,9 @@ $(document).ready(function () {
             }
           });
 
+          // search all paths
           $('#bt3').click(function () {
+            $("#loading").fadeIn();
             $('#detail').html('searching...<br>正在搜索...');
             if ($('#departure').find(':selected').html() == 'IAH' || $('#destination').find(':selected').html() == 'IAH') {
               alert('There is no flight connected to IAH in the database.');
@@ -161,7 +161,6 @@ $(document).ready(function () {
                   })
                 }
               }
-
               for (k in activelist) {
                 if (k == 0) {
                   canvasFlowmapLayerView.selectGraphicsForPathDisplayById('s_city_id', activelist[k], true, 'SELECTION_NEW');
@@ -184,6 +183,7 @@ $(document).ready(function () {
             }
           });
 
+          // reset the map
           $('#bt4').click(function () {
             view.zoom = 4;
             view.center = [-95.049, 38.485];
@@ -197,6 +197,7 @@ $(document).ready(function () {
         });
       }
 
+      // set the default selected options of the departure and the destination.
       $.getJSON(airportUrl, function (airports) {
         var htmlContant = ""; // store the options
         var pointList = [];   // store the coordination of airports
@@ -216,30 +217,14 @@ $(document).ready(function () {
         miaOption[0].selected = "selected";
 
       });
-
-
     });
 
 
-  // function of reverse direction
+  // reverse the direction.
   $('#bt1').click(function () {
     var temp = $('#departure').find(':selected').html();
     $('#departure').val($('#destination').find(':selected').html());
     $('#destination').val(temp);
   });
-
-  // $('#bt2').click(function () {
-  //   if ($('#departure').find(':selected').html() == 'IAH' || $('#destination').find(':selected').html() == 'IAH') {
-  //     alert('There is no flight connected to IAH in the database.');
-  //   } else if ($('#departure').find(':selected').html() == $('#destination').find(':selected').html()) {
-  //     alert('The departure airport matches the destination.')
-  //   } else {
-  //     canvasFlowmapLayerView.selectGraphicsForPathDisplayById('s_city_id', 15, true, 'SELECTION_NEW');
-  //     canvasFlowmapLayerView.selectGraphicsForPathDisplayById('s_city_id', 30, true, 'SELECTION_ADD');
-  //   }
-  // });
-
-
-
 })
 
