@@ -35,7 +35,7 @@ $(document).ready(function () {
 
       view.when(function () {
         $("#loading").fadeOut();
-        $("#detail").html('Please choose departure and destination.<br />请选择出发和到达地点。');
+        $("#detail").html('Please choose departure and destination.<br />请选择出发和到达地点，点击左侧按钮开始搜索航线。');
 
         // here we use Papa Parse to load and read the CSV data
         // we could have also used another library like D3js to do the same
