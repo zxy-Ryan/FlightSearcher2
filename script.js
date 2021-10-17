@@ -87,13 +87,13 @@ $(document).ready(function () {
             canvasFlowmapLayerView.selectGraphicsForPathDisplayById('s_city_id', i, true, 'SELECTION_ADD');
           };
           $("#loading").fadeOut();
-          $("#detail").html('Please choose departure and destination.<br />请选择出发和到达地点，点击左侧按钮开始搜索航线。');
+          $("#detail").html('Please choose departure and destination.<br />Click "Shortest Path" to search the shortest path(s).<br />Click "All Paths" to search all paths.');
 
 
           // search the fastest path
           $('#bt2').click(function () {
             $("#loading").fadeIn();
-            $('#detail').html('searching...<br>正在搜索...');
+            $('#detail').html('searching...');
             if ($('#departure').find(':selected').html() == 'IAH' || $('#destination').find(':selected').html() == 'IAH') {
               alert('There is no flight connected to IAH in the database.');
             } else if ($('#departure').find(':selected').html() == $('#destination').find(':selected').html()) {
@@ -122,15 +122,15 @@ $(document).ready(function () {
                   canvasFlowmapLayerView.selectGraphicsForPathDisplayById('s_city_id', activelist[j], true, 'SELECTION_ADD');
                 }
               }
-              $('#detail').html('从' + getCity(startcode) + '(' + startcode + ')' + '出发，到' + getCity(endcode) + '(' + endcode + ')' + '的最快路线：<br>')
-              $('#detail').append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + '乘坐航班顺序：')
+              $('#detail').html('Trip: ' + getCity(startcode) + '(' + startcode + ')' + 'to ' + getCity(endcode) + '(' + endcode + ')' + '<br>')
+              $('#detail').append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + 'Flight sequence: ')
               for (i in shortestPath) {
                 $('#detail').append(shortestPath[i]);
                 if (i + 1 < shortestPath.length) {
-                  $('#detail').append('、')
+                  $('#detail').append(', ')
                 }
               }
-              $('#detail').append('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;共用时' + hours + '小时' + mins + '分钟')
+              $('#detail').append('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total time: ' + hours + ' hours ' + mins + ' minutes')
             }
             $("#loading").fadeOut();
           });
@@ -138,7 +138,7 @@ $(document).ready(function () {
           // search all paths
           $('#bt3').click(function () {
             $("#loading").fadeIn();
-            $('#detail').html('searching...<br>正在搜索...');
+            $('#detail').html('searching...<br>');
             if ($('#departure').find(':selected').html() == 'IAH' || $('#destination').find(':selected').html() == 'IAH') {
               alert('There is no flight connected to IAH in the database.');
             } else if ($('#departure').find(':selected').html() == $('#destination').find(':selected').html()) {
@@ -169,8 +169,8 @@ $(document).ready(function () {
                   canvasFlowmapLayerView.selectGraphicsForPathDisplayById('s_city_id', activelist[k], true, 'SELECTION_ADD');
                 }
               }
-              $('#detail').html('从' + getCity(startcode) + '(' + startcode + ')' + '出发，到' + getCity(endcode) + '(' + endcode + ')' + '共有' + paths.length + '条路线：<br>')
-              $('#detail').append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + '乘坐航班顺序：<br>')
+              $('#detail').html('There are total ' + paths.length + ' paths from ' + getCity(startcode) + '(' + startcode + ')' + ' to ' + getCity(endcode) + '(' + endcode + ')' + '<br>')
+              // $('#detail').append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + '乘坐航班顺序：<br>')
               var mapKeys = times.keys();
               var mapValues = times.values();
               for (i = 0; i < times.size; i++) {
@@ -179,7 +179,7 @@ $(document).ready(function () {
                 var time = mapValues.next().value;
                 var hours = parseInt(time / 1000 / 60 / 60);
                 var mins = time / 1000 / 60 % 60;
-                $('#detail').append('第' + index + '条路线乘坐航班顺序：' + path + '，共用时' + hours + '小时' + mins + '分钟<br>');
+                $('#detail').append('The ' + index + ' path go through ' + path + ' with a travel time of ' + hours + ' hours ' + mins + ' minutes.<br>');
               }
             }
             $("#loading").fadeOut();
@@ -193,7 +193,7 @@ $(document).ready(function () {
             for (i = 2; i < 52; i++) {
               canvasFlowmapLayerView.selectGraphicsForPathDisplayById('s_city_id', i, true, 'SELECTION_ADD');
             };
-            $('#detail').html('Please choose departure and destination.<br />请选择出发和到达地点。')
+            $('#detail').html('Please choose departure and destination.<br />Click "Shortest Path" to search the shortest path(s).<br />Click "All Paths" to search all paths.')
           });
 
         });

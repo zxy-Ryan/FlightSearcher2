@@ -67,6 +67,8 @@ html, body, #mapViewDiv {
 
 #notice {
   color: white;
+  line-height: 100%;
+  margin-bottom: 0;
 }
 
 footer {
@@ -86,3 +88,4 @@ footer a {
   color: white;
   text-decoration: none;
 }
+
