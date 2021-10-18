@@ -1,9 +1,9 @@
-# FlightSearcher
+# Flights Searcher
 
 ## Discription
-FlightSearcher helps users find the flights path which takes the least time from one city to another, from all possibilities.  
+Flights Searcher helps users find the flights path which takes the least time from one city to another, from all possibilities.  
 This demo is a web version of a python project, for demonstration use only. Original functions are not fully implemented.  
-you can run the demo here: <a href="https://zxy-ryan.github.io/flight-searcher/">flight searcher</a>
+you can run the demo here: <a href="https://zxy-ryan.github.io/flights-searcher/">flights searcher</a>
 
 ## Raw Data
 Air ports data: [Airports.txt](/rawdata/Airports.txt)  
