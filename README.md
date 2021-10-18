@@ -6,8 +6,8 @@ This demo is a web version of a python project, for demonstration use only. Orig
 you can run the demo here: <a href="https://zxy-ryan.github.io/FlightSearcher/">FlightSearcher</a>
 
 ## Raw Data
-Air ports data:
-Flights data: 
+Air ports data: [Airports.txt](/rawdata/Airports.txt)
+Flights data: [FlightsData.txt](/rawdata/FlightsData.txt)
 
 ## Statement of Work
 1. Design a database through the raw data to represent a flight network. 
