@@ -10,10 +10,10 @@ Air ports data: [Airports.txt](/rawdata/Airports.txt)
 Flights data: [FlightsData.txt](/rawdata/FlightsData.txt)
 
 ## Statement of Work
-1. Design a database through the raw data to represent a flight network. 
+1. Design a relational database through the raw data to represent a flight network. 
 2. Read a graph from the database. 
 3. Design a recursion algorithm that finds all paths as well as the shortest path through the graph. A 'path' represents a flights combination. 
-4. Design a GUI to change inputs and display results. For the web version, ArcGIS API for Javascript was used to display the map-related functions. 
+4. Design a GUI to change inputs and display results. For the web version, ArcGIS API for JavaScript was used to display the map-related functions. 
 
 
 _**Notice**_: The page was written in ES6(ECMAScript 2015), if something is going wrong please try another browser.
